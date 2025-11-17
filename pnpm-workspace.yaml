@@ -1,0 +1,7 @@
+onlyBuiltDependencies:
+  - '@logue/vue2-helpers'
+  - '@parcel/watcher'
+  - esbuild
+  - postinstall-postinstall
+  - unrs-resolver
+  - vue-demi
