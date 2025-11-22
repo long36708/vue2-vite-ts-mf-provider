@@ -8,7 +8,13 @@ import { federation } from '@module-federation/vite';
 import { visualizer } from 'rollup-plugin-visualizer';
 import { checker } from 'vite-plugin-checker';
 
+import { moduleFederationConfig } from './module-federation.config.ts';
 import pkg from './package.json';
+
+const mfPrefix = 'module-federation';
+const prefixPath = `${mfPrefix}/${pkg.name}@${pkg.version}`;
+
+const port = 4174;
 /**
  * Vite Configure
  *
@@ -17,7 +23,8 @@ import pkg from './package.json';
 export default defineConfig(({ command, mode }): UserConfig => {
   const config: UserConfig = {
     // https://vitejs.dev/config/shared-options.html#base
-    base: './',
+    // base: './',
+    base: `/${prefixPath}`,
     plugins: [
       // Vue2
       // https://github.com/vitejs/vite-plugin-vue2
@@ -34,12 +41,7 @@ export default defineConfig(({ command, mode }): UserConfig => {
       // https://github.com/vbenjs/vite-plugin-compression
       // viteCompression(),
       federation({
-        name: 'vue2_vite_provider',
-        manifest: true,
-        filename: 'remoteEntry.js',
-        exposes: {
-          './BaseButton': './src/components/BaseButton.vue',
-        },
+        ...moduleFederationConfig,
       }),
     ],
     // Resolver
@@ -52,9 +54,9 @@ export default defineConfig(({ command, mode }): UserConfig => {
       extensions: ['.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue'],
     },
     css: {
+      devSourcemap: true,
       preprocessorOptions: {
         scss: {
-          api: 'modern-compiler', // or 'modern' (需要vite 5.x)
           quietDeps: true,
           silenceDeprecations: [
             'legacy-js-api',
@@ -74,8 +76,13 @@ export default defineConfig(({ command, mode }): UserConfig => {
         // Allow serving files from one level up to the project root
         allow: ['..'],
       },
-      origin: 'http://localhost:4174',
-      port: 4174,
+      // origin: `http://localhost:4174`,
+      port,
+      strictPort: true,
+    },
+    preview: {
+      strictPort: true,
+      port,
     },
     // Build Options
     // https://vitejs.dev/config/build-options.html
@@ -83,6 +90,8 @@ export default defineConfig(({ command, mode }): UserConfig => {
       // Build Target
       // https://vitejs.dev/config/build-options.html#build-target
       target: 'esnext',
+      // target: 'chrome89',
+      outDir: `dist/${prefixPath}`,
       // Rollup Options
       // https://vitejs.dev/config/build-options.html#build-rollupoptions
       rollupOptions: {
@@ -102,6 +111,9 @@ export default defineConfig(({ command, mode }): UserConfig => {
               '@logue/vue2-helpers/vuex',
             ],
           },
+          globals: {
+            vue: 'Vue',
+          },
           plugins: [
             mode === 'analyze'
               ? // rollup-plugin-visualizer
@@ -115,14 +127,23 @@ export default defineConfig(({ command, mode }): UserConfig => {
               : undefined,
           ],
         },
+        onwarn(warning: any, warn: any): void {
+          // Suppress "Module level directives cause errors when bundled" warnings
+          if (warning.code === 'MODULE_LEVEL_DIRECTIVE') {
+            return;
+          }
+          warn(warning);
+        },
       },
       // Minify option
       // https://vitejs.dev/config/build-options.html#build-minify
       minify: 'esbuild',
+      // minify: false,
+      // cssCodeSplit: false,
     },
     esbuild: {
       // Drop console when production build.
-      drop: command === 'serve' ? [] : ['console'],
+      drop: command === 'serve' ? [] : ['console', 'debugger'],
     },
   };
 

@@ -1,31 +1,29 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "name": "vite-vue2-ts-starter",
+  "name": "vue2-vite-ts-mf-provider",
   "description": "Vue2 TypeScript Startar project for Vite.",
-  "version": "1.8.1",
+  "version": "1.0.0",
   "license": "MIT",
   "type": "module",
   "private": true,
   "author": {
-    "name": "Logue",
-    "email": "logue@hotmail.co.jp",
-    "url": "https://logue.dev/"
+    "name": "longmo"
   },
-  "homepage": "https://github.com/logue/vite-vue2-ts-starter",
+  "homepage": "https://github.com/long36708/vue2-vite-ts-mf-provider",
   "repository": {
     "type": "git",
-    "url": "git@github.com:logue/vite-vue2-ts-starter.git"
+    "url": "git@github.com:long36708/vue2-vite-ts-mf-provider.git"
   },
   "bugs": {
-    "url": "https://github.com/logue/vite-vue2-ts-starter/issues"
+    "url": "https://github.com/long36708/vue2-vite-ts-mf-provider/issues"
   },
   "engines": {
     "node": ">=18.12.5",
     "yarn": ">=1.22.19"
   },
   "scripts": {
-    "vite:dev": "vite --port 4174",
-    "preview": "vite preview --port 4174",
+    "vite:dev": "vite --port 4174 --host",
+    "preview": "vite preview --port 4174 --host",
     "clean": "rimraf ./node_modules/.vite",
     "build": "run-p type-check \"build-only {@}\" --",
     "build:analyze": "vite build --mode analyze",
@@ -36,6 +34,7 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
     "postinstall": "patch-package",
+    "serve:local": "cd dist && http-serve -p 4174",
     "prepare": "husky install"
   },
   "dependencies": {

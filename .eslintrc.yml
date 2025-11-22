@@ -21,6 +21,7 @@ parserOptions:
     - ./tsconfig.vitest.json
   extraFileExtensions:
     - .vue
+    - .md
 plugins:
   - import
   - tsdoc
@@ -66,7 +67,14 @@ rules:
       alphabetize:
         order: asc
       newlines-between: always
-  tsdoc/syntax: warn
+  tsdoc/syntax:
+    - warn
+    - ignoreTags:
+      - Author
+      - Date
+      - LastEditTime
+      - FilePath
+      - Description
   vue/html-self-closing: # A tag with no content should be written like <br />.
     - error
     - html:
