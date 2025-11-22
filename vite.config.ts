@@ -34,7 +34,7 @@ export default defineConfig(({ command, mode }): UserConfig => {
       // https://github.com/vbenjs/vite-plugin-compression
       // viteCompression(),
       federation({
-        name: 'vue3_vite_provider',
+        name: 'vue2_vite_provider',
         manifest: true,
         filename: 'remoteEntry.js',
         exposes: {
@@ -50,6 +50,23 @@ export default defineConfig(({ command, mode }): UserConfig => {
         '~': fileURLToPath(new URL('./node_modules', import.meta.url)),
       },
       extensions: ['.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue'],
+    },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern-compiler', // or 'modern' (需要vite 5.x)
+          quietDeps: true,
+          silenceDeprecations: [
+            'legacy-js-api',
+            'import',
+            'global-builtin',
+            // 'mixed-decls',
+            'slash-div',
+            'color-functions',
+            'function-units',
+          ],
+        },
+      },
     },
     // https://vitejs.dev/config/server-options.html
     server: {
