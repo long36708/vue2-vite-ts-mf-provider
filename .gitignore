@@ -36,6 +36,5 @@ dist-ssr
 coverage/
 
 # Special File
-.husky/
 src/Meta.ts
 .__mf__temp
