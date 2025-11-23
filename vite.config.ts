@@ -32,7 +32,10 @@ export default defineConfig(({ command, mode }): UserConfig => {
       // vite-plugin-checker
       // https://github.com/fi3ework/vite-plugin-checker
       checker({
-        typescript: true,
+        typescript: {
+          tsconfigPath: './tsconfig.json',
+        },
+        // vls: true,
         // vueTsc: true,
         // eslint: {lintCommand: 'eslint'},
         // stylelint: {lintCommand: 'stylelint'},
