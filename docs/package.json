@@ -1,0 +1,31 @@
+{
+  "name": "@vue2-vite-ts-mf-provider/docs",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "description": "Documentation for Vue2 Vite TS MF Provider",
+  "private": true,
+  "scripts": {
+    "dev": "vuepress dev",
+    "build": "vuepress build"
+  },
+  "dependencies": {
+    "element-ui": "^2.15.14",
+    "lru-cache": "5.1.1",
+    "vuepress": "^1.9.10"
+  },
+  "devDependencies": {
+    "@vuepress/plugin-active-header-links": "^1.9.10",
+    "@vuepress/plugin-nprogress": "^1.9.10",
+    "@vuepress/plugin-search": "^1.9.10",
+    "vuepress-plugin-demo-container-v2.7": "^2.8.0",
+    "postcss": "7.0.39",
+    "autoprefixer": "^9.4.22",
+    "postcss-loader": "^2.0.0",
+    "stylus": "^0.54.8",
+    "stylus-loader": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=18.12.5"
+  },
+  "packageManager": "pnpm@10.22.0"
+}

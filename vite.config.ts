@@ -53,6 +53,8 @@ export default defineConfig(({ command, mode }): UserConfig => {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url)),
         '~': fileURLToPath(new URL('./node_modules', import.meta.url)),
+        // Fix for babel-runtime core-js path issue
+        'core-js/library/fn/object/assign': 'core-js/es/object/assign',
       },
       extensions: ['.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue'],
     },

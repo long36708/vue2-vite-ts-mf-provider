@@ -38,3 +38,4 @@ coverage/
 # Special File
 src/Meta.ts
 .__mf__temp
+docs/.temp

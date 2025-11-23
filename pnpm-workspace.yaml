@@ -1,7 +1,14 @@
+packages:
+  - docs
+
 onlyBuiltDependencies:
   - '@logue/vue2-helpers'
   - '@parcel/watcher'
+  - core-js
   - esbuild
+  - highlight.js
   - postinstall-postinstall
   - unrs-resolver
   - vue-demi
+  - vuepress
+  - vuepress-plugin-demo-container-v2.7
