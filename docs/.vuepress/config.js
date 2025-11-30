@@ -8,7 +8,7 @@ module.exports = {
   // dest: 'dist/docs',
   // temp: '.temp',
   // cache: '.cache',
-
+  lastUpdated: '最近更新',
   // 主题配置
   themeConfig: {
     nav: [
