@@ -1,6 +1,5 @@
 // MSW 1.x 浏览器端配置
 // 这个文件将在浏览器环境中运行
-
 const { setupWorker } = require('msw');
 const { rest } = require('msw');
 
@@ -28,12 +27,16 @@ const handlers = [
       ctx.status(200),
       ctx.json({
         success: true,
-        token: 'mock-jwt-token-' + Date.now(),
-        user: {
-          id: 1,
-          name: 'Admin User',
-          username: 'admin',
-          email: 'admin@example.com',
+        code: 200,
+        message: '登录成功',
+        data: {
+          token: 'mock-jwt-token-' + Date.now(),
+          user: {
+            id: 1,
+            name: 'Admin User',
+            username: 'admin',
+            email: 'admin@example.com',
+          },
         },
       })
     );
@@ -102,7 +105,23 @@ const worker = setupWorker(...handlers);
 function setupMsw() {
   worker
     .start({
-      onUnhandledRequest: 'warn',
+      // onUnhandledRequest: 'warn',
+      onUnhandledRequest(request, print) {
+        // Ignore any requests containing "cdn.com" in their URL.
+        if (
+          request.url.href.includes('/favicon.ico') ||
+          request.url.href.includes('/assets') ||
+          request.url.href.includes('/sockjs-node/') ||
+          request.url.href.includes('.hot-update.json')
+        ) {
+          return;
+        }
+
+        console.debug(worker);
+
+        // Otherwise, print an unhandled request warning.
+        print.warning();
+      },
     })
     .then(() => {
       console.log('🔶 MSW: Mock worker started successfully');

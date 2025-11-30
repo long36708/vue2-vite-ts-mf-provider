@@ -6,3 +6,4 @@ dist/
 public/assets/
 tsconfig.*.json
 components.d.ts
+docs

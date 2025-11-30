@@ -13,6 +13,7 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
+      { text: '测试', link: '/test-msw.html' },
       { text: '组件', link: '/examples/' },
       {
         text: 'GitHub',
