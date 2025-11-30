@@ -1,0 +1,14 @@
+diff --git a/lib/utils/AsyncEventEmitter.js b/lib/utils/AsyncEventEmitter.js
+index 479328f081079585cec00f8f714423546b624beb..fab791813ff7ad861e70a5023da60908b8e5338e 100644
+--- a/lib/utils/AsyncEventEmitter.js
++++ b/lib/utils/AsyncEventEmitter.js
+@@ -74,7 +74,8 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from) {
+ Object.defineProperty(exports, "__esModule", { value: true });
+ exports.AsyncEventEmitter = exports.AsyncEventEmitterReadyState = void 0;
+ var debug_1 = require("debug");
+-var strict_event_emitter_1 = require("strict-event-emitter");
++// var strict_event_emitter_1 = require("strict-event-emitter");
++var strict_event_emitter_1 = require("../../node_modules/strict-event-emitter");
+ var nextTick_1 = require("./nextTick");
+ var AsyncEventEmitterReadyState;
+ (function (AsyncEventEmitterReadyState) {

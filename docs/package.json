@@ -5,24 +5,30 @@
   "description": "Documentation for Vue2 Vite TS MF Provider",
   "private": true,
   "scripts": {
-    "dev": "vuepress dev",
+    "dev": "vuepress dev --no-cache",
     "build": "vuepress build"
   },
   "dependencies": {
     "element-ui": "^2.15.14",
-    "lru-cache": "5.1.1",
     "vuepress": "^1.9.10"
   },
   "devDependencies": {
     "@vuepress/plugin-active-header-links": "^1.9.10",
     "@vuepress/plugin-nprogress": "^1.9.10",
     "@vuepress/plugin-search": "^1.9.10",
-    "vuepress-plugin-demo-container-v2.7": "^2.8.0",
-    "postcss": "7.0.39",
     "autoprefixer": "^9.4.22",
+    "lru-cache": "5.1.1",
+    "debug": "4.3.3",
+    "chalk": "^4.1.1",
+    "stream-http": "^2.7.2",
+    "postcss": "7.0.39",
     "postcss-loader": "^2.0.0",
     "stylus": "^0.54.8",
-    "stylus-loader": "^3.0.2"
+    "stylus-loader": "^3.0.2",
+    "vuepress-plugin-demo-container-v2.7": "^2.8.0"
+  },
+  "msw": {
+    "workerDirectory": ".vuepress\\public"
   },
   "engines": {
     "node": ">=18.12.5"

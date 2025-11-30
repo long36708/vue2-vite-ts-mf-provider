@@ -17,6 +17,6 @@
     "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "types": ["node"],
-    "lib": ["ES2021", "ESNext.Array", "ESNext.Collection"]
+    "lib": ["ES2021"]
   }
 }

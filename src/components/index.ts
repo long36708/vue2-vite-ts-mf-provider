@@ -7,3 +7,4 @@
  */
 export { default as BaseButton } from './BaseButton.vue';
 export { default as TheWelcome } from './TheWelcome.vue';
+export { default as MswTest } from './MswTestSimple.vue';

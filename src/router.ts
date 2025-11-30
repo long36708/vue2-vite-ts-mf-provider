@@ -21,6 +21,11 @@ const routes: RouteRecordRaw[] = [
     // which is lazy-loaded when the route is visited.
     component: async () => await import('@/views/AboutView.vue'),
   },
+  {
+    path: '/msw-test',
+    name: 'MswTest',
+    component: async () => await import('@/components/MswTestSimple.vue'),
+  },
 ];
 
 /** Vue Router */
