@@ -1,4 +1,4 @@
-import { setupWorker } from 'msw';
+import { setupWorker } from 'msw/browser';
 import { handlers } from './handlers';
 
 // 设置 Service Worker
@@ -12,12 +12,9 @@ export const startMockWorker = () => {
       // 生产环境下的额外配置
       quiet: false, // 保持日志输出以便调试
       onUnhandledRequest(request, print) {
-        // Ignore any requests containing "cdn.com" in their URL.
-        if (
-          request.url.href.includes('/favicon.ico') ||
-          request.url.href.includes('/assets') ||
-          request.url.href.includes('.hot-update.json')
-        ) {
+        const url = new URL(request.url);
+
+        if (/\.png|jpg|svg|tsx?|css|jsx?|woff2$/.test(url.pathname)) {
           return;
         }
 

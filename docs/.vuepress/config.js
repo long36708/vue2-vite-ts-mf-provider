@@ -46,8 +46,8 @@ module.exports = {
   ],
   chainWebpack(config) {
     // 1. 支持 .mjs 扩展
-    config.resolve.mainFields.clear();
-    config.resolve.mainFields.merge(['main', 'browser']);
+    // config.resolve.mainFields.clear();
+    // config.resolve.mainFields.merge(['main', 'browser']);
     // 2. 修改 js 规则，处理 .js 和 .mjs，并包含 msw 及其依赖
     // config.module
     //   .rule('js')
