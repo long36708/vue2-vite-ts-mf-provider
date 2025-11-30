@@ -56,7 +56,8 @@
     "serve:local": "cd dist && http-serve -p 4174",
     "//prepare": "husky install",
     "docs:dev": "pnpm --filter docs dev",
-    "docs:build": "pnpm --filter docs build"
+    "docs:build": "pnpm --filter docs build",
+    "docs:server:local": "pnpm --filter docs serve:local"
   },
   "dependencies": {
     "@logue/vue2-helpers": "^2.3.0",
@@ -96,6 +97,7 @@
     "eslint-plugin-vuejs-accessibility": "^2.4.1",
     "eslint-plugin-yaml": "^0.5.0",
     "headers-polyfill": "3.2.5",
+    "http-server": "^14.1.1",
     "husky": "^9.1.7",
     "jsdom": "^27.2.0",
     "lint-staged": "^16.2.7",

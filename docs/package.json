@@ -1,12 +1,13 @@
 {
-  "name": "@vue2-vite-ts-mf-provider/docs",
+  "name": "docs",
   "version": "1.0.0",
   "type": "commonjs",
   "description": "Documentation for Vue2 Vite TS MF Provider",
   "private": true,
   "scripts": {
     "dev": "vuepress dev --no-cache",
-    "build": "vuepress build"
+    "build": "vuepress build",
+    "serve:local": "http-server .vuepress\\dist -p 8899 -o /longmo"
   },
   "dependencies": {
     "element-ui": "^2.15.14",

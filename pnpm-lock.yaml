@@ -116,6 +116,9 @@ importers:
       headers-polyfill:
         specifier: 3.2.5
         version: 3.2.5
+      http-server:
+        specifier: ^14.1.1
+        version: 14.1.1(debug@4.3.3)
       husky:
         specifier: ^9.1.7
         version: 9.1.7
@@ -4135,6 +4138,13 @@ packages:
       }
     hasBin: true
 
+  basic-auth@2.0.1:
+    resolution:
+      {
+        integrity: sha512-NF+epuEdnUYVlGuhaxbbq+dvJttwLnGY+YixlXlME5KpQ5W3CnXA5cVTneY3SPbPDRkcjMbifrwmFYcClgOZeg==,
+      }
+    engines: { node: '>= 0.8' }
+
   batch@0.6.1:
     resolution:
       {
@@ -5169,6 +5179,13 @@ packages:
       {
         integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==,
       }
+
+  corser@2.0.1:
+    resolution:
+      {
+        integrity: sha512-utCYNzRSQIZNPIcGZdQc92UVJYAhtGAteCFg0yRaFm8f0P+CPtyGyHXJcGXnffjCybUCEx3FQ2G7U3/o9eIkVQ==,
+      }
+    engines: { node: '>= 0.4.0' }
 
   cosmiconfig@5.2.1:
     resolution:
@@ -7669,6 +7686,13 @@ packages:
         integrity: sha512-7Wn5GMLuHBjZCb2bTmnDOycho0p/7UVaAeqXZGbHrBCl6Yd/xDhQJAXe6Ga9AXJH2I5zY1dEdYw2u1UptnSBJA==,
       }
 
+  html-encoding-sniffer@3.0.0:
+    resolution:
+      {
+        integrity: sha512-oWv4T4yJ52iKrufjnyZPkrN0CH3QnrUqdB6In1g5Fe1mia8GmF36gnfNySxoZtxD5+NmYw1EElVXiBk93UeskA==,
+      }
+    engines: { node: '>=12' }
+
   html-encoding-sniffer@4.0.0:
     resolution:
       {
@@ -7808,6 +7832,14 @@ packages:
         integrity: sha512-7mz/721AbnJwIVbnaSv1Cz3Am0ZLT/UBwkC92VlxhXv/k/BBQfM2fXElQNC27BVGr0uwUpplYPQM9LnaBMR5NQ==,
       }
     engines: { node: '>=8.0.0' }
+
+  http-server@14.1.1:
+    resolution:
+      {
+        integrity: sha512-+cbxadF40UXd9T01zUHgA+rlo2Bg1Srer4+B4NwIHdaGxAGGv59nYRnGGDJ9LBk7alpS0US+J+bLLdQOOkJq4A==,
+      }
+    engines: { node: '>=12' }
+    hasBin: true
 
   http-signature@1.2.0:
     resolution:
@@ -10063,6 +10095,13 @@ packages:
       }
     hasBin: true
 
+  opener@1.5.2:
+    resolution:
+      {
+        integrity: sha512-ur5UIdyw5Y7yEj9wLzhqXiy6GZ3Mwx0yGI+5sMn2r0N0v3cKJvUmFH5yPP+WXh9e0xfyzyJX95D8l088DNFj7A==,
+      }
+    hasBin: true
+
   opn@5.5.0:
     resolution:
       {
@@ -11706,6 +11745,12 @@ packages:
       }
     engines: { node: '>=4' }
 
+  secure-compare@3.0.1:
+    resolution:
+      {
+        integrity: sha512-AckIIV90rPDcBcglUwXPF3kg0P0qmPsPXAj6BBEENQE1p5yA1xfmDJzfi1Tappj37Pv2mVbKpL3Z1T+Nn7k1Qw==,
+      }
+
   select-hose@2.0.0:
     resolution:
       {
@@ -13094,6 +13139,13 @@ packages:
       }
     engines: { node: '>=0.10.0' }
 
+  union@0.5.0:
+    resolution:
+      {
+        integrity: sha512-N6uOhuW6zO95P3Mel2I2zMsbsanvvtgn6jVqJv4vbVcz/JN0OkL9suomjQGmWtxJQXOCqUJvquc1sMeNz/IwlA==,
+      }
+    engines: { node: '>= 0.8.0' }
+
   uniq@1.0.1:
     resolution:
       {
@@ -13219,6 +13271,12 @@ packages:
         integrity: sha512-Am1ousAhSLBeB9cG/7k7r2R0zj50uDRlZHPGbazid5s9rlF1F/QKYObEKSIunSjIOkJZqwRRLpvewjEkM7pSqg==,
       }
     deprecated: Please see https://github.com/lydell/urix#deprecated
+
+  url-join@4.0.1:
+    resolution:
+      {
+        integrity: sha512-jk1+QP6ZJqyOiuEI9AEWQfju/nB2Pw466kbA0LEZljHwKeMgd9WrAEgEGxjPDD2+TNbbb37rTyhEfrCXfuKXnA==,
+      }
 
   url-loader@1.1.2:
     resolution:
@@ -13830,6 +13888,13 @@ packages:
         integrity: sha512-OqedPIGOfsDlo31UNwYbCFMSaO9m9G/0faIHj5/dZFDMFqPTcx6UwqyOy3COEaEOg/9VsGIpdqn62W5KhoKSpg==,
       }
     engines: { node: '>=0.8.0' }
+
+  whatwg-encoding@2.0.0:
+    resolution:
+      {
+        integrity: sha512-p41ogyeMUrw3jWclHWTQg1k05DSVXPLcVxRTYsXUk+ZooOCZLcoYgPZ/HL/D/N+uQPOtcp1me1WhBEaX02mhWg==,
+      }
+    engines: { node: '>=12' }
 
   whatwg-encoding@3.1.1:
     resolution:
@@ -16971,6 +17036,10 @@ snapshots:
 
   baseline-browser-mapping@2.8.32: {}
 
+  basic-auth@2.0.1:
+    dependencies:
+      safe-buffer: 5.1.2
+
   batch@0.6.1: {}
 
   bcrypt-pbkdf@1.0.2:
@@ -17577,6 +17646,8 @@ snapshots:
   core-util-is@1.0.2: {}
 
   core-util-is@1.0.3: {}
+
+  corser@2.0.1: {}
 
   cosmiconfig@5.2.1:
     dependencies:
@@ -19348,6 +19419,10 @@ snapshots:
 
   hsla-regex@1.0.0: {}
 
+  html-encoding-sniffer@3.0.0:
+    dependencies:
+      whatwg-encoding: 2.0.0
+
   html-encoding-sniffer@4.0.0:
     dependencies:
       whatwg-encoding: 3.1.1
@@ -19468,6 +19543,25 @@ snapshots:
       requires-port: 1.0.0
     transitivePeerDependencies:
       - debug
+
+  http-server@14.1.1(debug@4.3.3):
+    dependencies:
+      basic-auth: 2.0.1
+      chalk: 4.1.2
+      corser: 2.0.1
+      he: 1.2.0
+      html-encoding-sniffer: 3.0.0
+      http-proxy: 1.18.1(debug@4.3.3)
+      mime: 1.6.0
+      minimist: 1.2.8
+      opener: 1.5.2
+      portfinder: 1.0.38(supports-color@6.1.0)
+      secure-compare: 3.0.1
+      union: 0.5.0
+      url-join: 4.0.1
+    transitivePeerDependencies:
+      - debug
+      - supports-color
 
   http-signature@1.2.0:
     dependencies:
@@ -20757,6 +20851,8 @@ snapshots:
 
   opencollective-postinstall@2.0.3: {}
 
+  opener@1.5.2: {}
+
   opn@5.5.0:
     dependencies:
       is-wsl: 1.1.0
@@ -21785,6 +21881,8 @@ snapshots:
       extend-shallow: 2.0.1
       kind-of: 6.0.3
 
+  secure-compare@3.0.1: {}
+
   select-hose@2.0.0: {}
 
   selfsigned@1.10.14:
@@ -22709,6 +22807,10 @@ snapshots:
       is-extendable: 0.1.1
       set-value: 2.0.1
 
+  union@0.5.0:
+    dependencies:
+      qs: 6.14.0
+
   uniq@1.0.1: {}
 
   uniqs@2.0.0: {}
@@ -22797,6 +22899,8 @@ snapshots:
       punycode: 2.3.1
 
   urix@0.1.0: {}
+
+  url-join@4.0.1: {}
 
   url-loader@1.1.2(webpack@4.47.0):
     dependencies:
@@ -23396,6 +23500,10 @@ snapshots:
       websocket-extensions: 0.1.4
 
   websocket-extensions@0.1.4: {}
+
+  whatwg-encoding@2.0.0:
+    dependencies:
+      iconv-lite: 0.6.3
 
   whatwg-encoding@3.1.1:
     dependencies:

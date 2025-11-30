@@ -4,8 +4,8 @@ module.exports = {
   title: 'Vue2 Vite TS MF Provider',
   description:
     'Vue2 TypeScript Starter project for Vite with Module Federation',
-  base: '/',
-  // dest: 'dist/docs',
+  base: '/longmo/',
+  dest: '.vuepress/dist/longmo',
   // temp: '.temp',
   // cache: '.cache',
   lastUpdated: '最近更新',
@@ -129,6 +129,7 @@ module.exports = {
         {
           test: /\.(mjs|js|cjs)$/,
           include: /node_modules/,
+          exclude: [/node_modules\/element-ui/],
           type: 'javascript/auto',
           use: {
             loader: 'babel-loader',
