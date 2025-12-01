@@ -129,11 +129,14 @@ module.exports = {
         {
           test: /\.(mjs|js|cjs)$/,
           include: /node_modules/,
-          exclude: [/node_modules\/element-ui/],
           type: 'javascript/auto',
           use: {
             loader: 'babel-loader',
             options: {
+              // fix: [BABEL] Note: The code generator has deoptimised the styling of
+              // node_modules\element-ui\lib\element-ui.common.js as it exceeds the max of 500KB.
+              // https://github.com/vuejs/vuepress/issues/3003 所有处理的文件都不会被压缩，可能增加构建体积
+              compact: false,
               presets: ['@babel/preset-env'],
               plugins: [
                 [require.resolve('@babel/plugin-transform-class-static-block')],
